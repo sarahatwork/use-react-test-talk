@@ -1,5 +1,6 @@
 import React from 'react';
 import './Switch.css';
+import Label from '../Label/Label';
 
 export default class Switch extends React.Component {
   state = {
@@ -13,9 +14,9 @@ export default class Switch extends React.Component {
   render() {
     return (
       <div>
-        <span data-testid="label" className="text">
+        <Label data-testid="label" className="text">
           {this.state.isOn ? 'On' : 'Off'}
-        </span>
+        </Label>
         <button onClick={this.toggleSwitch}>Toggle</button>
       </div>
     );
