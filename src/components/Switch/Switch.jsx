@@ -1,23 +1,18 @@
-import React from 'react';
-import './Switch.css';
+import React, { useState } from 'react';
 
-export default class Switch extends React.Component {
-  state = {
-    isOn: false
-  };
+export default function Switch() {
+  const [isOn, setIsOn] = useState(false);
 
-  toggleSwitch = () => {
-    this.setState({ isOn: !this.state.isOn });
-  };
-
-  render() {
-    return (
-      <div>
-        <span data-testid="label" className="text">
-          The toggle is: {this.state.isOn ? 'On' : 'Off'}
-        </span>
-        <button onClick={this.toggleSwitch}>Toggle</button>
-      </div>
-    );
+  function toggleSwitch() {
+    setIsOn(currentValue => !currentValue);
   }
+
+  return (
+    <div>
+      <span data-testid="label" className="text">
+        The toggle is: {isOn ? 'On' : 'Off'}
+      </span>
+      <button onClick={toggleSwitch}>Toggle</button>
+    </div>
+  );
 }
