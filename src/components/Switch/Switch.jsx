@@ -1,0 +1,21 @@
+import React from 'react';
+import './Switch.css';
+
+export default class Switch extends React.Component {
+  state = {
+    isOn: false
+  };
+
+  toggleSwitch = () => {
+    this.setState({ isOn: !this.state.isOn });
+  };
+
+  render() {
+    return (
+      <div>
+        <span className="text">{this.state.isOn ? 'On' : 'Off'}</span>
+        <button onClick={this.toggleSwitch}>Toggle</button>
+      </div>
+    );
+  }
+}
