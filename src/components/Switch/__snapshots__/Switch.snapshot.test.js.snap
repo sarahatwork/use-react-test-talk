@@ -6,6 +6,7 @@ exports[`Switch test with Jest snapshot is off by default 1`] = `
     class="text"
     data-testid="label"
   >
+    The toggle is: 
     Off
   </span>
   <button>
@@ -20,6 +21,7 @@ exports[`Switch test with Jest snapshot switches from off to on on user click 1`
     class="text"
     data-testid="label"
   >
+    The toggle is: 
     On
   </span>
   <button>
