@@ -4,13 +4,13 @@ import Switch from './Switch';
 
 describe('Switch test with React Testing Library', () => {
   it('is off by default', () => {
-    const { getByText } = render(<Switch />);
-    expect(getByText('Off')).toBeInTheDocument();
+    const { getByTestId } = render(<Switch />);
+    expect(getByTestId('label')).toHaveTextContent('Off');
   });
 
   it('switches from off to on on user click', () => {
-    const { getByText, getByRole } = render(<Switch />);
+    const { getByTestId, getByRole } = render(<Switch />);
     fireEvent.click(getByRole('button'));
-    expect(getByText('On')).toBeInTheDocument();
+    expect(getByTestId('label')).toHaveTextContent('On');
   });
 });
