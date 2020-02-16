@@ -13,7 +13,9 @@ export default class Switch extends React.Component {
   render() {
     return (
       <div>
-        <span className="text">{this.state.isOn ? 'On' : 'Off'}</span>
+        <span data-testid="label" className="text">
+          {this.state.isOn ? 'On' : 'Off'}
+        </span>
         <button onClick={this.toggleSwitch}>Toggle</button>
       </div>
     );
