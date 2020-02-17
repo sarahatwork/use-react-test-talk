@@ -1,31 +1,35 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Switch test with Jest snapshot is off by default 1`] = `
-<div>
-  <span
-    class="text"
-    data-testid="label"
-  >
-    The toggle is: 
-    Off
-  </span>
-  <button>
-    Toggle
-  </button>
-</div>
+<section>
+  <div>
+    <span
+      class="text"
+      data-testid="label"
+    >
+      The toggle is: 
+      Off
+    </span>
+    <button>
+      Toggle
+    </button>
+  </div>
+</section>
 `;
 
 exports[`Switch test with Jest snapshot switches from off to on on user click 1`] = `
-<div>
-  <span
-    class="text"
-    data-testid="label"
-  >
-    The toggle is: 
-    On
-  </span>
-  <button>
-    Toggle
-  </button>
-</div>
+<section>
+  <div>
+    <span
+      class="text"
+      data-testid="label"
+    >
+      The toggle is: 
+      On
+    </span>
+    <button>
+      Toggle
+    </button>
+  </div>
+</section>
 `;
