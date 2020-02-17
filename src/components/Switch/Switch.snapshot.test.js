@@ -3,16 +3,14 @@ import { render, fireEvent } from '@testing-library/react';
 import Switch from './Switch';
 
 describe('Switch test with Jest snapshot', () => {
+  it('is off by default', () => {
+    const { container } = render(<Switch />);
+    expect(container.firstChild).toMatchSnapshot();
+  });
+
   it('switches from off to on on user click', () => {
-    const { asFragment, getByRole } = render(<Switch />);
-
-    // save original output
-    const firstRender = asFragment();
-
-    // click button
+    const { container, getByRole } = render(<Switch />);
     fireEvent.click(getByRole('button'));
-
-    // compare to new output
-    expect(firstRender).toMatchDiffSnapshot(asFragment());
+    expect(container.firstChild).toMatchSnapshot();
   });
 });
