@@ -1,5 +1,6 @@
 import React, { useCallback, useEffect, useState } from 'react';
 import './Switch.css';
+import fetchUrl from '../../fetchUtil';
 
 export default function Switch() {
   const [isOn, setIsOn] = useState(false);
@@ -7,11 +8,10 @@ export default function Switch() {
 
   useEffect(() => {
     const fetchDogPic = async () => {
-      const res = await fetch(
+      const { message } = await fetchUrl(
         'https://dog.ceo/api/breed/chihuahua/images/random'
       );
-      const out = await res.json();
-      setDogImage(out.message);
+      setDogImage(message);
     };
     if (isOn) {
       fetchDogPic();
@@ -31,7 +31,12 @@ export default function Switch() {
       <button onClick={toggleSwitch}>Toggle</button>
       {isOn &&
         (dogImage ? (
-          <img className="image" src={dogImage} alt="Chihuahua" />
+          <img
+            className="image"
+            data-testid="image"
+            src={dogImage}
+            alt="Chihuahua"
+          />
         ) : (
           <span className="text">Loading...</span>
         ))}
