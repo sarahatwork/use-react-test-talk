@@ -25,7 +25,7 @@ exports[`Switch test with Jest snapshot switches from off to on on user click 1`
       data-testid="label"
     >
       The toggle is: 
-      Off
+      On
     </span>
     <button>
       Toggle
